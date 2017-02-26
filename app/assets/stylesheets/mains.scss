@@ -1,3 +1,375 @@
 // Place all the styles related to the mains controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//Applicationファイルに対する記述
+.icon{
+    text-align: center;
+    margin-bottom: 110px;
+}
+
+.form{
+        margin-bottom: 20px;
+        text-align: center;
+
+    .search_form{
+        width: 300px;
+        height: 30px;
+        background-color: gainsboro;
+    }
+
+    .login{
+        position: relative;
+        left: 200px;
+        top: -50px;
+    }    
+}
+
+.formButton{
+    position: fixed;
+    right: 0;
+    top: 50%;
+}
+
+
+//signupモーダル
+#signUpModalWrapper{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 100;
+
+    .signUpModal{
+        color: black;
+        background-color: white;
+        opacity: 1;
+        width: 600px;
+        height: 800px;
+        position: fixed;
+        z-index: 1;
+    
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+
+//ここまでApplication用
+
+.contents{
+    margin-top: 100px;
+    margin: 0 auto;
+    width: 1000px;
+    
+    .content{
+        text-align: center;
+        margin: 0 auto;
+        float: left;
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+
+        border:1px solid #cccccc;
+        
+        .like{
+            text-align: left;
+            padding-left: 5px;
+            margin-top: 20px;
+            width: 40px;
+            height: 25px;
+            background-color: #000000;
+            opacity: 0.2;
+        }
+
+        .user{
+            width: 100px;
+            height: 25px;
+            position: absolute;
+            font-size: 10px;
+            float: left;
+            right: 0;
+            bottom: 0;
+            background-color: #000000;
+            opacity: 0.2;
+            color: red;
+
+            .userIcon{
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
+
+
+.menu{
+    text-align: center;
+    list-style: none;
+
+    li.ctg-icon{
+        display: inline;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    li.ctg-icon2{
+        display: inline;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    ul.category{
+        list-style: none;
+        display: none;
+        //visibility: collapse;
+        //overflow: hidden;
+    }
+    
+
+    li.ctg-icon:hover > ul.category{
+        //visibility: visible;
+        display: block;
+        //overflow: visible;
+    }
+}
+
+
+.line{
+    //text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-bottom: 0.25px solid #000000;
+    width: 1930px;
+}
+
+.detail{
+    margin: 0 auto;
+    width: 410px;
+
+    .title{
+        font-size: 15px;
+        text-align: left;
+        width: 250px;
+        
+        border-bottom: 0.25px solid #000000;
+        padding-bottom: 10px;
+    }
+
+    .user{
+        text-align: right;
+    
+        .userIcon{
+            width: 20px;
+            height: 20px;
+        }
+        .userName{
+            font-size: 10px;
+        }
+        .time{
+            font-size: 10px;
+        }
+    }
+
+    .content{
+        text-align: center;
+
+        .image{
+            width: 410px;
+            height: 410px;
+        }
+
+        .likeText{
+            text-align: left;
+        }
+
+        .likeIcon{
+            text-align: right;
+            margin-right: 10px;
+            margin-bottom: 80px;
+        }
+
+        .tag{
+            text-align: left;
+            font-size: 10px;
+            margin-bottom: 60px;
+        }
+
+        .text{
+            text-align: left;
+            font-size: 10px;
+            margin-bottom: 60px;
+        }
+    }
+
+    .top{
+        margin: 0 auto;
+        width: 410px;
+
+        .topLink{
+            text-align: right;
+            font-size: 30px;
+        }
+        
+    }
+}
+
+
+//フォームのモーダルよう
+#formModalWrapper{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  z-index: 100;
+}
+
+
+.formModal{
+    color: black;
+    background-color: white;
+    opacity: 1;
+    width: 600px;
+    height: 850px;
+    position: fixed;
+    z-index: 1;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.uploadForm{
+    text-align: center;
+
+    .title{
+        text-align: left;
+        font-size: 20px;
+        margin-left: 150px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: gray;
+        
+    }  
+
+    .image{
+        width: 200px;
+        height: 200px;
+        background-color: rgba(255, 255, 255, 0.6);
+        margin: 0 auto;
+
+        border:1px solid gray;
+    }
+
+    .imageLabel{
+        background-color: white;
+        padding: 6px;
+        border-radius: 12px;
+        margin-top: 20px;
+        font-size: 5px;
+        border:1px solid gray;
+        color: gray;
+
+        position: fixed;
+        top: 19%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .formTitle{
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    .category{
+        width: 300px;
+        height: 50px;
+        background-color: white;
+        margin: 0 auto;
+        border:1px solid gray;
+
+        margin-top: 20px;
+        font-size: 5px;
+    }
+
+    .categoryTitle{
+        position: fixed;
+        top: 335px;
+        left: 160px;
+        font-size: 10px;
+        color: gray;
+    } 
+
+    .radioButton{
+        position: fixed;
+        top: 355px;
+        left: 165px;
+        font-size: 10px;
+        color: gray;
+    }
+
+    .belongTag{
+        width: 300px;
+        height: 30px;
+        color: gray;
+        border:1px solid gray;
+        margin: 0 auto;
+
+        margin-top: 20px;
+        font-size: 5px;
+    }
+
+    .belongTagTitle{
+        font-size: 10px;
+        position: fixed;
+        top: 410px;
+        left: 160px;
+    }
+
+    .tag{
+        width: 300px;
+        height: 50px;
+        color: gray;
+        border:1px solid gray;
+        border:1px solid gray;
+        margin: 0 auto;
+
+        margin-top: 20px;
+        font-size: 5px;
+
+    }
+
+    .tagTitle{
+        font-size: 10px;
+        position: fixed;
+        top: 460px;
+        left: 160px;
+    }
+
+    .detail{
+        margin-top: 20px;
+        width: 300px;
+        height: 200px;
+    }
+
+    .submit{
+        margin-top: 20px;
+        background: url(uploadButton.png);
+        border: 0px;
+        height: 24px;
+        width: 86px;
+    }
+}
+
+

@@ -1,7 +1,8 @@
 class MainsController < ApplicationController
 
     def top
-        @form = Form.all
+        @form = Form.new
+        @forms = Form.all
     end
 
     def form

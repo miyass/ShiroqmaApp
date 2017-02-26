@@ -28,6 +28,7 @@ gem 'pry-rails'
 gem 'ruby-debug-ide'
 gem 'debase'
 gem 'devise'
+gem 'carrierwave'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

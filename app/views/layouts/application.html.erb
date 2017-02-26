@@ -8,6 +8,55 @@
 </head>
 <body>
 
+<div class="header">
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <div class="icon">
+    <%= image_tag("srQm-logo.png") %>
+  </div>
+
+  <div class="form">
+    <div class="search">
+      <input name="keyword" type="text" placeholder="タイトルで検索" class="search_form">
+    </div>
+    <%= image_tag("login.png", :class => "login") %>
+  </div>
+
+  
+    <ul class="menu">
+      <li class="ctg-icon"><%= image_tag("home-Icon.png") %></li>
+      <li class="ctg-icon"><%= image_tag("feed-Icon.png") %></li>
+      <li class="ctg-icon"><%= image_tag("ctg-Icon.png") %>
+        <ul class="category">
+          <li class="picture ctg-icon2"><%= image_tag("pict-Icon.png") %></li>
+          <li class="illust ctg-icon2"><%= image_tag("ilst-Icon.png") %></li>
+          <li class="music ctg-icon2"><%= image_tag("music-Icon.png") %></li>
+          <li class="movie ctg-icon2"><%= image_tag("movie-Icon.png") %></li>
+        </ul>
+      </li>
+      <% if user_signed_in? %>
+        <li class="ctg-icon"><%= image_tag("mypg-Icon.png") %></li>
+      <% else %>
+        <li class="ctg-icon"><%= image_tag('signup-Icon.png', class: 'signUpButton' ) %></li>
+      <% end %>
+    </ul>
+
+    <div id="signUpModalWrapper">
+      <div class="signUpModal">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        メルアド
+        <%= f.email_field :email, autofocus: true %>
+        パスワード
+        <%= f.password_field :password, autocomplete: "off" %>
+        もう一回
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        
+        <%= f.submit "Sign up" %>
+        <% end %>
+      </div>
+    </div>
+  
+</div>
+
 <%= yield %>
 
 

@@ -1,0 +1,86 @@
+
+<div class="formButton">
+    <%= image_tag('formButton.png') %>
+</div>
+
+
+<div id="formModalWrapper">
+    <div class="formModal">
+        <div class="uploadForm">
+            <div class="title">
+            Upload
+            </div>
+            <%= form_for @form,:url => {:action => 'create'} do |f| %>
+                <div class='image'>
+                    <%= f.label :image, 'Upload Image', {class: 'imageLabel'} %>
+                    <%= f.file_field :image, {style: 'display:none'} %>
+                </div>
+                
+                <%#ここは後でタイトルデータベース作って修正%>
+                <div>
+                    <%= f.text_field :text, {class: 'formTitle', placeholder: 'title'} %>
+                </div>
+                <%#同じくデータベース追加して修正%>
+                <div class="category">
+                    <label class="categoryTitle">select category</label>
+                   <div class="radioButton">
+                       ・picture<input type="checkbox" value="image" name="image">
+                       ・illust<input type="checkbox" value="image" name="image">
+                       ・music<input type="checkbox" value="image" name="image">
+                       ・movie<input type="checkbox" value="image" name="image">
+                   </div>
+                </div>
+                <div class="belongTag">
+                    <div class="belongTagTitle">
+                        所属tag
+                    </div>
+                </div>
+                <div class="tag">
+                    <div class="tagTitle">
+                        tag
+                    </div>
+                </div>
+                <div class="details"> 
+                    <%= f.text_area :text, {class: 'detail', placeholder: 'caption or detail'} %>
+                </div>
+
+                <div>
+                <%= f.submit :class => 'submit', :value => '' %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="contents">
+    <div class="content">
+        <div class="like">
+            <%= image_tag('like-Icon.png') %>
+            
+        </div>
+        <div class="user">
+            <%= image_tag('srQm-logo.png', class: 'userIcon') %>
+            kei0101
+        </div>
+
+    </div>
+
+
+
+
+    <div class="content">
+        
+    </div>
+    <div class="content">
+        
+    </div>
+    <div class="content">
+        
+    </div>
+    <div class="content">
+        
+    </div>
+    <div class="content">
+        
+    </div>
+</div>
