@@ -47,16 +47,14 @@
 
     <div id="signUpModalWrapper">
       <div class="signUpModal">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        メルアド
-        <%= f.email_field :email, autofocus: true %>
-        パスワード
-        <%= f.password_field :password, autocomplete: "off" %>
-        もう一回
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        
-        <%= f.submit "Sign up" %>
-        <% end %>
+        <div class="signUpForm">
+          <div class="title">
+            Sign Up
+          </div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          
+          <% end %>
+        </div>
       </div>
     </div>
   
