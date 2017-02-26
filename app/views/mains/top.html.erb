@@ -12,22 +12,22 @@
             </div>
             <%= form_for @form,:url => {:action => 'create'} do |f| %>
                 <div class='image'>
-                    <%= f.label :image, 'Upload Image', {class: 'imageLabel'} %>
-                    <%= f.file_field :image, {style: 'display:none'} %>
+                    <%= f.label :picture, 'Upload Image', {class: 'imageLabel'} %>
+                    <%= f.file_field :picture, {style: 'display:none'} %>
                 </div>
                 
                 <%#ここは後でタイトルデータベース作って修正%>
                 <div>
-                    <%= f.text_field :text, {class: 'formTitle', placeholder: 'title'} %>
+                    <%= f.text_field :title, {class: 'formTitle', placeholder: 'title'} %>
                 </div>
                 <%#同じくデータベース追加して修正%>
                 <div class="category">
                     <label class="categoryTitle">select category</label>
                    <div class="radioButton">
-                       ・picture<input type="checkbox" value="image" name="image">
-                       ・illust<input type="checkbox" value="image" name="image">
-                       ・music<input type="checkbox" value="image" name="image">
-                       ・movie<input type="checkbox" value="image" name="image">
+                        image<%= f.radio_button 'category', 'image'%>
+                        illust<%= f.radio_button 'category', 'illust'%>
+                        music<%= f.radio_button 'category', 'music'%>
+                        movie<%= f.radio_button 'category', 'movie'%>
                    </div>
                 </div>
                 <div class="belongTag">
@@ -53,7 +53,9 @@
 </div>
 
 <div class="contents">
+    <% @forms.each do |form| %>
     <div class="content">
+        <%= image_tag(form.picture.url, :class => "image-size") %>
         <div class="like">
             <%= image_tag('like-Icon.png') %>
             
@@ -62,8 +64,8 @@
             <%= image_tag('srQm-logo.png', class: 'userIcon') %>
             kei0101
         </div>
-
     </div>
+    <% end %>
 
 
 

@@ -9,7 +9,6 @@
 <body>
 
 <div class="header">
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
   <div class="icon">
     <%= image_tag("srQm-logo.png") %>
   </div>
@@ -18,7 +17,13 @@
     <div class="search">
       <input name="keyword" type="text" placeholder="タイトルで検索" class="search_form">
     </div>
-    <%= image_tag("login.png", :class => "login") %>
+    <div class="login">
+    <% if user_signed_in? %>
+      <%= link_to image_tag('logout.png'), destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= image_tag("login.png") %>
+    <% end %>
+    </div>
   </div>
 
   

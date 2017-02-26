@@ -79,10 +79,15 @@
 
         border:1px solid #cccccc;
         
+        .image-size{
+            width: 200px;
+            height: 200px;
+        }
+
         .like{
             text-align: left;
-            padding-left: 5px;
-            margin-top: 20px;
+            padding-left: 10px;
+            margin-top: -190px;
             width: 40px;
             height: 25px;
             background-color: #000000;
@@ -314,7 +319,7 @@
     .radioButton{
         position: fixed;
         top: 355px;
-        left: 165px;
+        left: 190px;
         font-size: 10px;
         color: gray;
     }

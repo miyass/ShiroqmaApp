@@ -10,7 +10,9 @@ class MainsController < ApplicationController
     end
 
     def create
-        Form.create(form_params)
+        @form = Form.new(form_params)
+        @form.save
+        redirect_to action: :top
     end
 
     def feed
@@ -35,7 +37,8 @@ class MainsController < ApplicationController
 
     private
     def form_params
-        params.permit(:text, :picture, :illust)
+        #params.permit(:text, :picture, :illust)
+        params.require(:form).permit(:text, :title, :picture, :category).merge(user_id: current_user.id)
     end
 
 end
