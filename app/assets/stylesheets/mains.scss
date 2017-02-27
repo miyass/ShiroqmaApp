@@ -32,6 +32,62 @@
     top: 50%;
 }
 
+//loginモーダル
+#loginModalWrapper{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 100;
+}
+
+.loginModal{
+    background-color: white;
+    opacity: 1;
+    width: 190px;
+    height: 125px;
+    position: fixed;
+    z-index: 1;
+    
+    top: 38%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+}
+
+.loginForm{
+    text-align: center;
+
+    .title{
+        text-align: left;
+        font-size: 12px;
+        color: gray;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .userName{
+        margin-top: 15px;
+    }
+
+    .userForm{
+        width: 160px;
+        height: 18px;
+    }
+
+    .password{
+        margin-top: 15px;
+    }
+
+    .passForm{
+        width: 160px;
+        height: 18px;
+    }
+}
+
+
 
 //signupモーダル
 #signUpModalWrapper{
@@ -69,10 +125,83 @@
         margin-top: 20px;
         margin-bottom: 20px;
         color: gray;
-        
     }      
 
+    .image{
+        width: 200px;
+        height: 200px;
+        background-color: rgba(255, 255, 255, 0.6);
+        margin: 0 auto;
+
+        border:1px solid gray;
+    }
+
+    .imageLabel{
+        background-color: white;
+        padding: 6px;
+        border-radius: 12px;
+        margin-top: 20px;
+        font-size: 5px;
+        border:1px solid gray;
+        color: gray;
+
+        position: fixed;
+        top: 19%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .userName{
+        margin-top: 15px;
+    }
+
+    .userForm{
+        width: 200px;
+    }
+
+    .password{
+        margin-top: 15px;
+    }
+
+    .passForm{
+        width: 200px;
+        
+    }
+
+    .graduation{
+        margin-top: 15px;
+    }
+
+    .gradForm{
+        width: 200px;
+    }
+
+    .college{
+        margin-top: 15px;
+    }
+
+    .colForm{
+        width: 200px;
+    }
+
+    .content{
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .conForm{
+        width: 200px;
+        height: 200px;
+    }
+
+    .submit{
+        background: url(signupButton.png);
+        border: 0px;
+        height: 24px;
+        width: 86px;
+    }
 }
+
 
 
 

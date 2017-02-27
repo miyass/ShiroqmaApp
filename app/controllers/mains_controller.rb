@@ -2,11 +2,11 @@ class MainsController < ApplicationController
 
     def top
         @form = Form.new
-        @forms = Form.all
+        @forms = Form.all.order('updated_at DESC')
     end
 
     def form
-        
+        @form = Form.find(params[:id])
     end
 
     def create

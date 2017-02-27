@@ -1,16 +1,17 @@
 <p class="line"></p>
 
+
 <div class="detail">
-    <div class="title">ojeee(黄色)</div>
+    <div class="title"><%= @form.title %></div>
 
     <div class="user">
-    　<%= image_tag('srQm-logo.png', class: 'userIcon')%>
-      <a class="userName">kei0101</a> 
+    　<%= image_tag(@form.user.image.url, class: 'userIcon')%>
+      <a class="userName"><%= @form.user.username %></a> 
       <div class="time">2016 / 05 / 28 13:25</div>
     </div>
 
     <div class="content">
-        <%= image_tag('testPic.png', class: 'image') %>
+        <%= image_tag(@form.picture, class: 'image') %>
         <div class="likeText">like: 31</div>
         <div class="likeIcon">
             <%= image_tag('like-Icon.png') %>
@@ -19,7 +20,7 @@
             #Phototo  #コントラスト強め  #地元で撮った
         </div>
         <div class="text">
-            学校の帰りになんとなくパシャり。使用ソフトはLightRoomです。
+            <%= @form.text %>
         </div>
     </div>
 </div>

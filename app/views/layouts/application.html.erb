@@ -21,14 +21,14 @@
     <% if user_signed_in? %>
       <%= link_to image_tag('logout.png'), destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= image_tag("login.png") %>
+      <%= image_tag("login.png", class: 'loginButton') %>
     <% end %>
     </div>
   </div>
 
   
     <ul class="menu">
-      <li class="ctg-icon"><%= image_tag("home-Icon.png") %></li>
+      <li class="ctg-icon"><%= link_to image_tag("home-Icon.png"), root_path %></li>
       <li class="ctg-icon"><%= image_tag("feed-Icon.png") %></li>
       <li class="ctg-icon"><%= image_tag("ctg-Icon.png") %>
         <ul class="category">
@@ -45,6 +45,26 @@
       <% end %>
     </ul>
 
+    <div id="loginModalWrapper">
+      <div class="loginModal">
+        <div class="loginForm">
+          <div class="title">
+          log in
+          </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="userName">
+              <%= f.text_field :username, {class: 'userForm', placeholder: 'username'} %>
+            </div>
+            <div class="password">
+              <%= f.password_field :password, {autocomplete: "off", class: 'passForm', placeholder: 'password'} %>
+            </div>
+            <%= f.submit 'login',{style: 'display:none'} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <%#サインアップモーダル%>
     <div id="signUpModalWrapper">
       <div class="signUpModal">
         <div class="signUpForm">
@@ -52,7 +72,26 @@
             Sign Up
           </div>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          
+          <div class="image">
+            <%= f.label :image, 'Upload Image', {class: 'imageLabel'} %>
+            <%= f.file_field :image, {style: 'display:none'} %>
+          </div>
+          <div class="userName">
+            <%= f.text_field :username, {class: 'userForm', placeholder: 'username'} %>
+          </div>
+          <div class="password">
+            <%= f.password_field :password, {autocomplete: "off", placeholder: 'password', class: 'passForm'} %>
+          </div>
+          <div class="graduation">
+            <%= f.text_field :graduation, {class: 'gradForm', placeholder: '　卒業'} %>
+          </div>
+          <div class="college">
+            <%= f.text_field :college, {class: 'colForm', placeholder: '　学校'} %>
+          </div>
+          <div class="content">
+            <%= f.text_area :content, {class: 'conForm', placeholder: 'and more...'} %>
+          </div>
+          <%= f.submit :class => 'submit', :value => '' %>
           <% end %>
         </div>
       </div>

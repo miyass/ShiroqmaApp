@@ -55,14 +55,14 @@
 <div class="contents">
     <% @forms.each do |form| %>
     <div class="content">
-        <%= image_tag(form.picture.url, :class => "image-size") %>
+        <%= link_to image_tag(form.picture.url, :class => "image-size"), "/form/#{form.id}", method: :get %>
         <div class="like">
             <%= image_tag('like-Icon.png') %>
             
         </div>
         <div class="user">
-            <%= image_tag('srQm-logo.png', class: 'userIcon') %>
-            kei0101
+            <%= image_tag(form.user.image.url, class: 'userIcon') %>
+            <%= form.user.username %>
         </div>
     </div>
     <% end %>

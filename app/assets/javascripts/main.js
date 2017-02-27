@@ -14,4 +14,8 @@ $(function(){
         $('#signUpModalWrapper').fadeIn();
     });
 
+    $('.loginButton').click(function(){
+        $('#loginModalWrapper').fadeIn();
+    });
+
 });
